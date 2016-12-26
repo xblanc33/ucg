@@ -4,6 +4,6 @@ var app = express();
 app.use(express.static('.'));
 
 
-app.listen(8080, function () {
-  console.log('UGC listening on port 3000!');
+app.listen(8070, function () {
+  console.log('UGC listening on port 8070!');
 });
