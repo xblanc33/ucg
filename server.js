@@ -45,6 +45,6 @@ mong_client.connect(db_url, function(err, db) {
 })
 
 
-app.listen(8070, function () {
+app.listen(8080, function () {
   console.log('UGC listening on port 8070!');
 });
