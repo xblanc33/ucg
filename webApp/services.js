@@ -17,6 +17,8 @@
 
     angular.module('servicesUCG').factory('entrainementsService', ['$resource', entrainementsServiceFactory]);
 
+    angular.module('servicesUCG').factory('inscriptionsService', ['$resource', inscriptionsServiceFactory]);
+
 
     /*
     This function is needed to convert Date
@@ -81,7 +83,23 @@
         });
     }
 
-
+    /*
+    Factory for inscriptions to competition
+    */
+    function inscriptionsServiceFactory($resource) {
+        return $resource('./inscriptions/:id', {}, {
+            query: {
+                method: 'GET',
+                isArray: true,
+                cache: false
+            },
+            get: {
+                method: 'GET',
+                isArray: true,
+                cache: false
+            }
+        });
+    }
 
 
     

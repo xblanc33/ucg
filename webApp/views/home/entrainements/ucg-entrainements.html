@@ -26,5 +26,36 @@
                 <div id="calendar"></div>
             </div>
         </div>
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <h2>Inscriptions aux Entraînements</h2>
+                <p>Inscrivez-vous aux entraînements pour y participer.</p>
+            </div>
+        </div>
+        <div class="blog-posts">
+            <div class="row">
+                <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                    <div class="col-sm-12" ng-repeat="entrainement in entrainements_visibles | orderBy: 'date'">
+                        <div class="col-sm-4">{{entrainement.titre}}</div>
+                        <div class="col-sm-2">{{entrainement.lieux}}</div>
+                        <div class="col-sm-3">{{entrainement.date | date:'d / M / y'}}</div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-default" ng-click="showInscrits(entrainement)">Liste Inscrits</button>
+                        </div>
+                    </div>
+                    <div ng-show="entrainements_visibles.length > 0" class="col-sm-12">
+                        <button type="button" class="btn btn-default" ng-click="showModal()">S'inscrire à un entraintement</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+
+<ng-include src="'views/home/entrainements/inscriptionEntrainementModalView.html'">
+</ng-include> 
+
+
+<ng-include src="'views/home/entrainements/listeInscritsEntrainementModalView.html'">
+</ng-include>
