@@ -1,0 +1,69 @@
+<div class="modal fade" id="inscription-modal" ng-controller="inscriptionEntrainementFormController" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span>
+                </button>
+                <h4 class="modal-title">Inscription à un entraînement</h4>
+            </div>
+            <div class="modal-body">
+                <!--<div ng-hide="form_inscription.$saved" class="alert alert-warning" role="alert">-->
+                <div ng-show="form_inscription.form_entrainement_id.$error.required || form_inscription.form_nom.$error.required || form_inscription.form_prenom.$error.required" class="alert alert-warning" role="alert">
+                    <div ng-show="form_inscription.form_entrainement_id.$error.required">
+                        Vous devez choisir un entrainement</div>
+                    <div ng-show="form_inscription.form_nom.$error.required">
+                        Vous devez saisir votre nom
+                    </div>
+                    <div ng-show="form_inscription.form_prenom.$error.required">
+                        Vous devez saisir votre prénom
+                    </div>
+                </div>
+
+
+
+
+                <!--</div>-->
+                <form novalidate class="form-horizontal" name="form_inscription">
+
+                    <div class="form-group">
+                        <label for="input-inscription-entrainement" class="col-sm-2 control-label">entrainement
+                        </label>
+                        <div class="col-sm-10">
+                            <select required id="input-inscription-entrainement" name="form_entrainement_id" class="form-control" ng-model="new_inscription.entrainement_id">
+                                <option ng-repeat="entrainement in entrainements_visibles" value="{{entrainement._id}}">{{entrainement.titre}} , ({{entrainement.lieux}}) , {{entrainement.date.getDate()}} / {{entrainement.date.getMonth()+1}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-inscription-nom" class="col-sm-2 control-label">Nom
+                        </label>
+                        <div class="col-sm-10">
+                            <input required id="input-inscription-nom" name="form_nom" type="text" ng-model="new_inscription.nom" />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-inscription-prenom" class="col-sm-2 control-label">Prénom
+                        </label>
+                        <div class="col-sm-10">
+                            <input required id="input-inscription-prenom" name="form_prenom" type="text" ng-model="new_inscription.prenom" />
+                            <br />
+                        </div>
+                    </div>
+                </form>
+                <div ng-show="new_inscription.success" class="alert alert-success" role="alert">
+                    <b>Bravo</b>, Inscription effectuée, Celle-ci sera visible d'ici quelques instants!
+                </div>
+                <div ng-show="new_inscription.already" class="alert alert-warning" role="alert">
+                    <b>Attention</b>, Vous êtes déjà inscrits à cet entraînement avec ce nom et ce prénom.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-primary" ng-click="saveNewInscription()">Valider</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
