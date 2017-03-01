@@ -2,32 +2,32 @@
 
     'use strict';
 
-    angular.module('adminModule').controller('eventModalController', ['$scope', 'eventsService', eventModalControllerFactory])
+    angular.module('adminModule').controller('entrainementModalController', ['$scope', 'entrainementsService', entrainementModalControllerFactory])
 
-    function eventModalControllerFactory($scope, $eventsService) {
-        $scope.event_modal = {};
+    function entrainementModalControllerFactory($scope, $entrainementsService) {
+        $scope.entrainement_modal = {};
 
-        var initEvent = function() {
-            $scope.event_modal = {};
+        var initEntrainement = function() {
+            $scope.entrainement_modal = {};
         }
 
-        var setEvent = function(event) {
-            $scope.event_modal = angular.copy(event);
+        var setEntrainement = function(entrainement) {
+            $scope.entrainement_modal = angular.copy(entrainement);
         }
 
-        $scope.$on('new_event', initEvent);
+        $scope.$on('new_entrainement', initEntrainement);
 
-        $scope.$on('open_event' , function(event, args) {
-            setEvent(args)
+        $scope.$on('open_entrainement' , function(entrainement, args) {
+            setEntrainement(args)
         })
 
 
 
-        $scope.saveEvent = function() {
-            var copy_event = angular.copy($scope.event_modal);
-            copy_event.token = $scope.token;
-            $eventsService.save(copy_event, function(save) {
-                $scope.event_modal.success = true
+        $scope.saveEntrainement = function() {
+            var copy_entrainement = angular.copy($scope.entrainement_modal);
+            copy_entrainement.token = $scope.token;
+            $entrainementsService.save(copy_entrainement, function(save) {
+                $scope.entrainement_modal.success = true
             })
         }
 
