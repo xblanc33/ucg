@@ -1,4 +1,8 @@
-<section id="entrainements">
+<div class="row">
+<br>
+<br>
+</div>
+<section id="team">
     <div class="container">
         <div class="row">
             <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
@@ -6,26 +10,24 @@
                 <p>Voici le calendrier des entraînements que nous organisons.</p>
             </div>
         </div>
-        <div class="blog-posts">
-            <div class="row">
-                <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default" ng-click="calendar.navigate('prev')">
-                            << Avant </button>
-                                <button type="button" class="btn btn-default" ng-click="calendar.navigate('today')">Aujourd'hui</button>
-                                <button type="button" class="btn btn-default" ng-click="calendar.navigate('next')">Après >></button>
-                    </div>
-                    <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default" ng-click="calendar.view('year')"> Année </button>
-                        <button type="button" class="btn btn-default" ng-click="calendar.view('month')">Mois</button>
-                        <button type="button" class="btn btn-default" ng-click="calendar.view('week')">Semaine</button>
-                    </div>
+        <!--<div class="blog-posts">-->
+        <div class="row">
+            <div id="calendar"></div>
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" ng-click="calendar.navigate('prev')">
+                        << Avant </button>
+                            <button type="button" class="btn btn-default" ng-click="calendar.navigate('today')">Aujourd'hui</button>
+                            <button type="button" class="btn btn-default" ng-click="calendar.navigate('next')">Après >></button>
+                </div>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default" ng-click="calendar.view('year')"> Année </button>
+                    <button type="button" class="btn btn-default" ng-click="calendar.view('month')">Mois</button>
+                    <button type="button" class="btn btn-default" ng-click="calendar.view('week')">Semaine</button>
                 </div>
             </div>
-            <div class="row">
-                <div id="calendar"></div>
-            </div>
         </div>
+        <!--</div>-->
         <div class="row">
             <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
                 <h2>Inscriptions aux Entraînements</h2>
@@ -50,12 +52,8 @@
             </div>
         </div>
     </div>
+    <ng-include src="'views/home/entrainements/inscriptionEntrainementModalView.html'">
+    </ng-include>
+    <ng-include src="'views/home/entrainements/listeInscritsEntrainementModalView.html'">
+    </ng-include>
 </section>
-
-
-<ng-include src="'views/home/entrainements/inscriptionEntrainementModalView.html'">
-</ng-include> 
-
-
-<ng-include src="'views/home/entrainements/listeInscritsEntrainementModalView.html'">
-</ng-include>
