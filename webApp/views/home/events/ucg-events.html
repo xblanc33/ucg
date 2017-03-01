@@ -1,0 +1,32 @@
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+                <h2>Nos Evénements</h2>
+                <p>Voici les événements (compétition et loisir) que nous organisons et qui participent à la vie du de l'Union Cycliste Gradignanaise.</p>
+            </div>
+        </div>
+        <div class="blog-posts">
+            <div class="row">
+                <div class="col-sm-4 wow fadeInUp" ng-repeat="event in events" data-wow-duration="1000ms" data-wow-delay="400ms">
+                    <div class="post-thumb">
+                        <a href="#"><img class="img-responsive" src="images/blog/{{event.class}}.jpg" alt=""></a>
+                        <div class="post-icon">
+                            <i class="fa fa-gift"></i>
+                        </div>
+                    </div>
+                    <div class="entry-header">
+                        <h3><a href="#">{{event.titre}}</a></h3>
+                        <span class="date">Le {{event.date.toLocaleDateString()}}</span>
+                    </div>
+                    <div class="entry-content">
+                        <p>{{event.description}} </p>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="load-more wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="500ms">
+                <a href="#" class="btn-loadmore"><i class="fa fa-repeat"></i> Plus d'événements</a>
+            </div>-->
+        </div>
+    </div>
+</section>

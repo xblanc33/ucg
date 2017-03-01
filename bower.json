@@ -1,0 +1,36 @@
+{
+  "name": "ucg",
+  "description": "site web de l'Union Cycliste Gradignan",
+  "main": "index.html",
+  "authors": [
+    "Xavier Blanc"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/xblanc33/ucg",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.2",
+    "angular-resource": "^1.6.2",
+    "angular-route": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-calendar": "^0.2.5",
+    "jquery": "^3.1.1",
+    "lightbox2": "^2.9.0",
+    "underscore": "^1.8.3",
+    "wow": "^1.1.2",
+    "jquery.inview": "jquery.inview#^1.1.2",
+    "jquery-countTo": "^1.2.0",
+    "animate.css": "^3.5.2",
+    "font-awesome": "^4.7.0"
+  },
+  "resolutions": {
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,34 @@
+<div ng-show="isAuthenticated">
+    <h1>Evénements</h1>
+    <li ng-repeat="event in events">
+        <button ng-click="showEvent(event)"> Editer l'événement {{event.titre}}</button>
+        <button ng-click="removeEvent(event)">Supprimer</button>
+    </li>
+    <button type="button" class="btn btn-default" ng-click="showNewEvent()"> Nouvel Evenement</button>
+    <ng-include src="'views/admin/eventModalView.html'">
+    </ng-include>
+</div>
+
+<div ng-show="isAuthenticated">
+    <h1>Entraînements</h1>
+    <li ng-repeat="entrainement in entrainements">
+        <button ng-click="showEntrainement(entrainement)"> Editer l'entraînement {{entrainement.titre}}</button>
+        <button ng-click="removeEntrainement(entrainement)">Supprimer</button>
+    </li>
+    <button type="button" class="btn btn-default" ng-click="showNewEntrainement()"> Nouvel Entrainement</button>
+    <ng-include src="'views/admin/entrainementModalView.html'">
+    </ng-include>
+</div>
+
+<div ng-hide="isAuthenticated">
+    <form name="loginForm" ng-controller="loginFormController" ng-submit="login(credentials)" novalidate ng-hide="isAuthorized">
+        <label for="username">Username:</label>
+        <input type="text" id="username" ng-model="credentials.username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" ng-model="credentials.password">
+        <button type="submit">Login</button>
+        <div ng-show="mauvais_login" class="alert alert-warning" role="alert">
+            {{mauvais_login}}
+        </div>
+    </form>
+</div>
