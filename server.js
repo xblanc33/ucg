@@ -53,7 +53,7 @@ app.post('/mails', function(req, res) {
 
     transporter.sendMail({
         from: 'webmaster@ucgradignan.fr',
-        to: 'xavier.blanc@labri.fr',
+        to: 'ucgradignan33@gmail.com',
         subject: sub,
         text: txt
     }, function(err) {
