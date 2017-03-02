@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "site web de l'Union Cycliste Gradignan",
   "main": "index.js",
+  "engines": {
+    "node": "6",
+    "npm": "*"
+  },
   "scripts": {
     "postinstall": "node_modules/.bin/bower install",
     "test": "echo \"Error: no test specified\" && exit 1",

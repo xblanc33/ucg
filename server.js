@@ -44,7 +44,7 @@ mong_client.connect(db_url, function(err, db) {
     }
 });
 
-/*var transporter = require('./mailer.js').transporter;
+var transporter = require('./mailer.js').transporter;
 app.post('/mails', function(req, res) {
 
     var sub = '[UCG Contact]['+req.body.email+'] '+req.body.subject;
@@ -59,7 +59,7 @@ app.post('/mails', function(req, res) {
     });
     res.status(200).end();
 
-});*/
+});
 
 
 app.listen(8080, function () {
