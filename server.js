@@ -42,7 +42,24 @@ mong_client.connect(db_url, function(err, db) {
         });
 
     }
-})
+});
+
+var transporter = require('./mailer.js').transporter;
+app.post('/mails', function(req, res) {
+
+    var sub = '[UCG Contact]['+req.body.email+'] '+req.body.subject;
+
+    var txt = 'Bonjour,\nUne demande de contact a été envoyée par le site web\n\n'+req.body.message;
+
+    transporter.sendMail({
+        from: 'webmaster@ucgradignan.fr',
+        to: 'xavier.blanc@labri.fr',
+        subject: sub,
+        text: txt
+    });
+    res.status(200).end();
+
+});
 
 
 app.listen(8080, function () {

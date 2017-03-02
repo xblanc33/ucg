@@ -91,11 +91,17 @@
             form.submit(function(event) {
                 event.preventDefault();
                 var form_status = $('<div class="form_status"></div>');
+                var form_data = $( "#main-contact-form" ).serializeArray();
+                console.log(form_data);
+                console.log($(this).attr('action'));
                 $.ajax({
                     url: $(this).attr('action'),
+                    //url:'mails',
+                    method:'POST',
                     beforeSend: function() {
                         form.prepend(form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn());
-                    }
+                    },
+                    data: form_data
                 }).done(function(data) {
                     form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
                 });
