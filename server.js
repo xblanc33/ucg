@@ -56,6 +56,12 @@ app.post('/mails', function(req, res) {
         to: 'xavier.blanc@labri.fr',
         subject: sub,
         text: txt
+    }, function(err) {
+        if(err) {
+            console.log('email js error');
+            console.log(err);
+        }
+        console.log('Message sent')
     });
     res.status(200).end();
 
